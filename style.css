@@ -9,13 +9,13 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background: #f4f4f4;
+  background: linear-gradient(to bottom right, #007bff, #6c757d);
   color: #333;
 }
 
 /* Cabeçalho */
 header {
-  background: #007bff;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
@@ -37,28 +37,30 @@ nav ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 nav ul li a.active {
   text-decoration: underline;
 }
 
-nav ul li a:hover {
-  color: #f4f4f4;
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-/* Seção Principal */
+/* Hero Section */
 .hero {
-  background: url('background.jpg') no-repeat center center/cover;
   height: 80vh;
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 1rem;
+  color: #fff;
 }
 
 .hero h2 {
@@ -66,16 +68,10 @@ nav ul li a:hover {
   margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
 .hero .btn {
   background: #007bff;
   color: #fff;
   padding: 0.7rem 1.5rem;
-  border: none;
   border-radius: 5px;
   text-decoration: none;
   font-size: 1rem;
@@ -89,52 +85,68 @@ nav ul li a:hover {
 /* Seção Sobre Mim */
 #sobre {
   padding: 2rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   text-align: center;
-}
-
-#sobre h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#sobre p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
 }
 
 .photo-gallery {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .photo-gallery img {
   width: 200px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   transition: transform 0.3s;
 }
 
 .photo-gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
 }
 
 /* Rodapé */
 footer {
-  background: #007bff;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   text-align: center;
   padding: 1rem 0;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #f4f4f4;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
 }
