@@ -9,7 +9,8 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background: linear-gradient(135deg, #4caf50, #81c784);
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   display: flex;
   flex-direction: column;
